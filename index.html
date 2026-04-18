@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loïc Lehygge — Media Kit 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F7F3EE;--warm:#FDFAF7;--sand:#C9B99A;--sand-l:#E8DDD0;
+  --dark:#1C1C1A;--dark-s:#2E2E2B;--mid:#6B6660;--accent:#8B6F4E;--accent-l:#D4B896;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--warm);color:var(--dark);font-family:Georgia,serif;overflow-x:hidden;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(247,243,238,0.97);backdrop-filter:blur(12px);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--sand-l);}
+.nav-logo{font-size:15px;letter-spacing:0.15em;text-transform:uppercase;color:var(--dark);text-decoration:none;font-family:Georgia,serif;}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+.nav-links a{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);text-decoration:none;}
+.nav-links a:hover{color:var(--dark);}
+.nav-dropdown{position:relative;}
+.nav-dropdown-btn{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);background:none;border:none;cursor:pointer;padding:0;}
+.nav-dropdown-btn:hover{color:var(--dark);}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);right:0;background:#fff;border:1px solid var(--sand-l);min-width:220px;z-index:200;}
+.nav-dropdown:hover .nav-dropdown-menu{display:block;}
+.nav-dropdown-menu a{display:block;padding:12px 20px;font-family:Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--sand-l);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{background:var(--cream);color:var(--dark);}
+
+/* HERO */
+.hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,18,16,0.82) 0%,rgba(20,18,16,0.25) 55%,transparent 100%);}
+.hero-content{position:relative;z-index:2;padding:0 64px 72px;width:100%;}
+.eyebrow{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent-l);margin-bottom:16px;}
+.hero-name{font-size:clamp(52px,9vw,112px);font-weight:300;color:#fff;line-height:0.9;letter-spacing:-0.02em;}
+.hero-tagline{margin-top:22px;font-size:clamp(17px,2vw,24px);font-style:italic;font-weight:300;color:rgba(255,255,255,0.8);max-width:420px;line-height:1.45;}
+.hero-stats{margin-top:40px;display:flex;gap:48px;flex-wrap:wrap;}
+.stat-n{font-size:clamp(26px,3vw,36px);font-weight:300;color:#fff;line-height:1;}
+.stat-l{font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:4px;}
+
+/* SECTIONS */
+.section{padding:80px 64px;}
+.section-alt{background:var(--cream);}
+.section-dark{background:var(--dark);}
+.label{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.label-inv{color:var(--accent-l);}
+.title{font-size:clamp(34px,4.5vw,58px);font-weight:300;line-height:1.05;color:var(--dark);letter-spacing:-0.01em;}
+.title-inv{color:#fff;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:start;margin-top:48px;}
+.about-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;}
+.about-text{font-size:17px;line-height:1.85;color:var(--dark-s);margin-top:20px;}
+.pillars{margin-top:36px;}
+.pillar{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--sand-l);}
+.pillar:last-child{border-bottom:none;}
+.p-num{font-family:Arial,sans-serif;font-size:11px;color:var(--accent);min-width:22px;padding-top:2px;}
+.p-title{font-family:Arial,sans-serif;font-size:14px;font-weight:600;color:var(--dark);margin-bottom:3px;}
+.p-body{font-family:Arial,sans-serif;font-size:13px;line-height:1.6;color:var(--mid);}
+
+/* PLATFORMS */
+.plat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;}
+.plat{background:var(--dark-s);padding:36px 24px;border-top:2px solid transparent;transition:border-color 0.3s;}
+.plat:hover{border-color:var(--accent);}
+.plat-n{font-size:clamp(32px,3.5vw,50px);font-weight:300;color:#fff;line-height:1;}
+.plat-name{font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-l);margin-top:6px;}
+.plat-handle{font-family:Arial,sans-serif;font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px;}
+.plat-detail{font-family:Arial,sans-serif;font-size:11px;color:rgba(255,255,255,0.35);line-height:1.6;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);}
+.total-bar{margin-top:2px;background:var(--accent);padding:28px 48px;display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;}
+.total-n{font-size:clamp(32px,4vw,50px);font-weight:300;color:#fff;line-height:1;text-align:center;}
+.total-l{font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px;text-align:center;}
+
+/* AUDIENCE */
+.aud-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-top:48px;}
+.aud-sub{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;margin-top:32px;}
+.aud-sub:first-child{margin-top:0;}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.bar-lbl{font-family:Arial,sans-serif;font-size:11px;color:var(--mid);min-width:60px;}
+.bar-wrap{flex:1;height:2px;background:var(--sand-l);}
+.bar{height:100%;background:var(--accent);}
+.bar-val{font-family:Arial,sans-serif;font-size:11px;font-weight:600;color:var(--dark);min-width:30px;text-align:right;}
+.gender-bar{display:flex;height:4px;border-radius:2px;overflow:hidden;margin-top:8px;}
+.gender-f{background:var(--accent);}
+.gender-m{background:var(--sand-l);}
+.gender-lbl{display:flex;justify-content:space-between;margin-top:8px;font-family:Arial,sans-serif;font-size:11px;color:var(--mid);}
+.callout{background:var(--warm);padding:32px;border-left:3px solid var(--accent);margin-bottom:24px;}
+.callout-n{font-size:clamp(32px,4vw,46px);font-weight:300;color:var(--dark);line-height:1;}
+.callout-l{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-top:6px;}
+.country-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.cname{font-family:Arial,sans-serif;font-size:12px;color:var(--dark-s);min-width:110px;}
+.cwrap{flex:1;height:1px;background:var(--sand-l);}
+.cbar{height:100%;background:var(--dark);}
+.cpct{font-family:Arial,sans-serif;font-size:11px;color:var(--mid);min-width:34px;text-align:right;}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.svc{background:var(--cream);padding:36px 28px;border-bottom:2px solid transparent;transition:border-color 0.3s,background 0.3s;}
+.svc:hover{background:#fff;border-color:var(--accent);}
+.svc-icon{font-size:22px;margin-bottom:16px;}
+.svc-title{font-size:22px;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:10px;}
+.svc-desc{font-family:Arial,sans-serif;font-size:13px;line-height:1.7;color:var(--mid);}
+.dels{margin-top:16px;display:flex;flex-direction:column;gap:6px;}
+.del{font-family:Arial,sans-serif;font-size:12px;color:var(--dark-s);padding-left:14px;position:relative;}
+.del::before{content:'—';position:absolute;left:0;color:var(--accent);}
+.svc-note{margin-top:36px;padding:22px 32px;background:var(--cream);font-family:Arial,sans-serif;font-size:13px;color:var(--mid);line-height:1.7;border-left:2px solid var(--sand);font-style:italic;text-align:center;}
+
+/* REFS */
+.logos{margin-top:40px;display:grid;grid-template-columns:repeat(6,1fr);gap:2px;}
+.logo-i{background:#fff;aspect-ratio:2/1;display:flex;align-items:center;justify-content:center;font-size:13px;text-align:center;color:var(--dark);font-weight:500;padding:10px;line-height:1.3;transition:background 0.2s,color 0.2s;}
+.logo-i:hover{background:var(--dark);color:var(--accent-l);}
+.testis{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.testi{background:var(--cream);padding:40px;position:relative;}
+.testi::before{content:'"';font-size:72px;color:var(--sand-l);position:absolute;top:16px;left:24px;line-height:1;}
+.testi-text{font-size:17px;font-style:italic;font-weight:300;line-height:1.6;color:var(--dark-s);padding-top:14px;position:relative;z-index:1;}
+.testi-src{margin-top:22px;font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.contact-sub{font-family:Arial,sans-serif;font-size:14px;line-height:1.7;color:rgba(255,255,255,0.45);max-width:360px;margin-top:18px;}
+.cta{display:inline-block;margin-top:36px;padding:16px 40px;background:var(--accent);color:#fff;font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;}
+.cta:hover{background:#7A5F40;}
+.ci{padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:24px;}
+.ci:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.ci-label{font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent-l);margin-bottom:6px;}
+.ci-val{font-size:20px;font-weight:300;color:#fff;text-decoration:none;}
+.ci-val:hover{color:var(--accent-l);}
+
+/* FOOTER */
+footer{background:var(--dark);padding:32px 64px;display:flex;justify-content:space-between;align-items:center;}
+.fl{font-size:13px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;}
+.fc{font-family:Arial,sans-serif;font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.15em;}
+
+@media(max-width:768px){
+  nav{padding:12px 20px;}
+  .nav-links{display:none;}
+  .section{padding:48px 20px;}
+  .hero-content{padding:0 24px 48px;}
+  .about-grid{grid-template-columns:1fr;}
+  .plat-grid{grid-template-columns:1fr 1fr;}
+  .aud-grid{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .testis{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .logos{grid-template-columns:repeat(3,1fr);}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Loïc Lehygge</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#reach">Reach</a></li>
+    <li><a href="#audience">Audience</a></li>
+    <li><a href="#services">Services</a></li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-btn">Case Studies ▾</button>
+      <div class="nav-dropdown-menu">
+        <a href="serre-chevalier.html">🏔 Serre Chevalier</a>
+        <a href="outdoor-gear.html">🎒 Outdoor & Gear</a>
+        <a href="ugc-collabs.html">🎬 UGC & Collabs</a>
+        <a href="hospitality.html">🏨 Hospitality & Real Estate</a>
+        <a href="on-the-road.html">🚗 On the Road</a>
+        <a href="drone.html">🚁 Drone</a>
+      </div>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg" style="background-image:url('images/drone_lagoon_red.jpg');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Destination Storyteller · Drone Operator · Content Creator</div>
+    <div class="hero-name">Loïc<br>Lehygge</div>
+    <div class="hero-tagline">Every story deserves to be told.<br>Let's tell yours.</div>
+    <div class="hero-stats">
+      <div><div class="stat-n">1.2M+</div><div class="stat-l">Total followers</div></div>
+      <div><div class="stat-n">10–25M</div><div class="stat-l">Monthly views</div></div>
+      <div><div class="stat-n">74%</div><div class="stat-l">French-speaking audience</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO I AM -->
+<div class="section" id="about">
+  <p class="label">Who I Am</p>
+  <h2 class="title">Behind<br>the lens.</h2>
+  <div class="about-grid">
+    <div>
+      <div class="about-text">Content creator and storyteller based between Paris and Brussels. I cover destinations, wildlife and culture across formats — from short-form video to aerial photography. I self-organise press trips and work with partners who fit naturally into the projects I'm already building.</div>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="p-num">01</span>
+          <div>
+            <div class="p-title">Projects first:</div>
+            <div class="p-body">I build the project, then bring in the right partners. Each collaboration has a reason to exist within the story — whether that's preparing a trip, documenting it, or reviewing the gear that made it possible.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="p-num">02</span>
+          <div>
+            <div class="p-title">Multi-format, cross-platform delivery</div>
+            <div class="p-body">One trip, multiple angles. Drone aerials, short-form reels, on-the-ground storytelling, food, culture, wildlife — I cover a destination in full, across every format your audience lives on.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="p-num">03</span>
+          <div>
+            <div class="p-title">French-speaking reach, global vision</div>
+            <div class="p-body">74% French-speaking audience across France, Belgium, Switzerland and Canada.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="about-img" src="images/Me_home.jpg" alt="Loïc Lehygge">
+  </div>
+</div>
+
+<!-- PLATFORMS -->
+<div class="section section-dark" id="reach">
+  <p class="label label-inv">Reach & Platforms</p>
+  <h2 class="title title-inv">Where the<br>story lives.</h2>
+  <div class="plat-grid">
+    <div class="plat">
+      <div class="plat-n">350k</div>
+      <div class="plat-name">Instagram</div>
+      <div class="plat-handle">@loic.lehygge</div>
+      <div class="plat-detail">Main creative hub. Reels, Stories and photo content. 47.8% reach beyond existing followers.</div>
+    </div>
+    <div class="plat">
+      <div class="plat-n">40k</div>
+      <div class="plat-name">Facebook</div>
+      <div class="plat-handle">@loic.lehygge</div>
+      <div class="plat-detail">Reaching an older French-speaking demographic. Strong for destination and nature video.</div>
+    </div>
+    <div class="plat">
+      <div class="plat-n">20k</div>
+      <div class="plat-name">YouTube</div>
+      <div class="plat-handle">@loic.lehygge</div>
+      <div class="plat-detail">Growing channel for destination content and series.</div>
+    </div>
+    <div class="plat">
+      <div class="plat-n">800k+</div>
+      <div class="plat-name">TikTok</div>
+      <div class="plat-handle">@lezanimaux + others</div>
+      <div class="plat-detail">Lead account @lezanimaux at 510k. Strong organic reach on nature & destination content.</div>
+    </div>
+  </div>
+  <div class="total-bar">
+    <div><div class="total-l">Combined audience</div><div class="total-n">1.2M+</div></div>
+    <div class="total-sub">Predominantly French-speaking across France, Belgium, Switzerland and Canada.</div>
+    <div><div class="total-l">Monthly views</div><div class="total-n">10–25M</div></div>
+  </div>
+</div>
+
+<!-- AUDIENCE -->
+<div class="section" id="audience">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div>
+      <p class="label">The Audience</p>
+      <h2 class="title">Who's<br>listening.</h2>
+    </div>
+    <div>
+      <div class="callout"><div class="callout-n">2.5M+</div><div class="callout-l">Accounts reached / month (Instagram)</div></div>
+    </div>
+  </div>
+  <div class="aud-grid" style="grid-template-columns:1fr 1fr;margin-top:48px;">
+    <div>
+      <div class="aud-sub">Age range — Instagram</div>
+      <div class="bar-row"><span class="bar-lbl">18–24</span><div class="bar-wrap"><div class="bar" style="width:26%"></div></div><span class="bar-val">26%</span></div>
+      <div class="bar-row"><span class="bar-lbl">25–34</span><div class="bar-wrap"><div class="bar" style="width:45%"></div></div><span class="bar-val">45%</span></div>
+      <div class="bar-row"><span class="bar-lbl">35–44</span><div class="bar-wrap"><div class="bar" style="width:16%"></div></div><span class="bar-val">16%</span></div>
+      <div class="bar-row"><span class="bar-lbl">45–54</span><div class="bar-wrap"><div class="bar" style="width:6%"></div></div><span class="bar-val">6%</span></div>
+      <div class="aud-sub">Gender split</div>
+      <div class="gender-bar"><div class="gender-f" style="flex:58"></div><div class="gender-m" style="flex:42"></div></div>
+      <div class="gender-lbl"><span>58% Female</span><span>42% Male</span></div>
+    </div>
+    <div>
+      <div class="aud-sub">Top countries</div>
+      <div class="country-row"><span class="cname">France 🇫🇷</span><div class="cwrap"><div class="cbar" style="width:74%"></div></div><span class="cpct">74.4%</span></div>
+      <div class="country-row"><span class="cname">Belgium 🇧🇪</span><div class="cwrap"><div class="cbar" style="width:5%"></div></div><span class="cpct">4.7%</span></div>
+      <div class="country-row"><span class="cname">USA 🇺🇸</span><div class="cwrap"><div class="cbar" style="width:3%"></div></div><span class="cpct">3.1%</span></div>
+      <div class="country-row"><span class="cname">Switzerland 🇨🇭</span><div class="cwrap"><div class="cbar" style="width:3%"></div></div><span class="cpct">2.7%</span></div>
+      <div class="country-row"><span class="cname">Canada 🇨🇦</span><div class="cwrap"><div class="cbar" style="width:2%"></div></div><span class="cpct">2.3%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="section section-alt" id="services">
+  <p class="label">What I offer</p>
+  <h2 class="title">Let's build<br>something real.</h2>
+  <div class="svc-grid">
+    <div class="svc">
+      <div class="svc-icon">🏔</div>
+      <div class="svc-title">Destination Campaigns</div>
+      <div class="svc-desc">Full content campaigns for tourism boards, regional offices and DMOs. From editorial angle to final delivery across all formats.</div>
+      <div class="dels">
+        <div class="del">Instagram Reels (15–90s)</div>
+        <div class="del">Instagram Stories series</div>
+        <div class="del">Drone footage & aerials</div>
+        <div class="del">YouTube content</div>
+        <div class="del">Photo gallery for press use</div>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🤝</div>
+      <div class="svc-title">Brand Content & UGC</div>
+      <div class="svc-desc">Natural integration of outdoor, travel, tech and lifestyle brands. Content delivered directly to the brand — posted on my channels or supplied as UGC.</div>
+      <div class="dels">
+        <div class="del">Product-in-use content</div>
+        <div class="del">UGC packages (no repost required)</div>
+        <div class="del">Dedicated review format</div>
+        <div class="del">Multi-platform campaigns</div>
+        <div class="del">Long-term partnerships</div>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🎬</div>
+      <div class="svc-title">Production & Licensing</div>
+      <div class="svc-desc">Professional photo and video production for licensing or custom briefs. Certified drone operator, editor and French voice-over artist.</div>
+      <div class="dels">
+        <div class="del">Drone footage licensing</div>
+        <div class="del">Photo catalogue licensing</div>
+        <div class="del">French voice-over</div>
+        <div class="del">Custom video production</div>
+        <div class="del">On-site shooting + editing</div>
+      </div>
+    </div>
+  </div>
+  <div class="svc-note">Open to new formats and collaborations — UGC, co-creation, product integrations. If the fit feels right, let's find a way to make it work.</div>
+</div>
+
+<!-- REFERENCES -->
+<div class="section" id="references">
+  <p class="label">References</p>
+  <h2 class="title">They trusted<br>the story.</h2>
+  <div class="logos">
+    <div class="logo-i">Indie Campers</div>
+    <div class="logo-i">Sea to Summit</div>
+    <div class="logo-i">Honda</div>
+    <div class="logo-i">Garmont</div>
+    <div class="logo-i">Gregory</div>
+    <div class="logo-i">Coros</div>
+    <div class="logo-i">Shokz</div>
+    <div class="logo-i">Abraham Tours</div>
+    <div class="logo-i">Desert Luxury Camp</div>
+    <div class="logo-i">Malta Tourism</div>
+    <div class="logo-i">North Jutland Tourism</div>
+    <div class="logo-i">Lafuma</div>
+    <div class="logo-i">Insta360</div>
+    <div class="logo-i">Tourism WA</div>
+    <div class="logo-i">Airalo</div>
+    <div class="logo-i">Serre Chevalier</div>
+    <div class="logo-i">Haglöfs</div>
+    <div class="logo-i">BCA 4x4</div>
+  </div>
+  <div class="testis">
+    <div class="testi">
+      <div class="testi-text">It was a pleasure working with Loïc. He provided high quality photographs and videos that exceeded our expectations. All delivered promptly as agreed.</div>
+      <div class="testi-src">— Desert Luxury Camp, Merzouga</div>
+    </div>
+    <div class="testi">
+      <div class="testi-text">Working with Loïc was very uncomplicated. The results were quite impressive — especially the visualisation of the destination. The industry partners loved the outcome.</div>
+      <div class="testi-src">— North Jutland Tourism Board</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section section-dark" id="contact">
+  <div class="contact-grid">
+    <div>
+      <p class="label label-inv">Get in touch</p>
+      <h2 class="title title-inv">Ready to tell<br>your story?</h2>
+      <a href="mailto:wheretohygge@gmail.com" class="cta">Start the conversation</a>
+    </div>
+    <div>
+      <div class="ci">
+        <div class="ci-label">Email</div>
+        <a href="mailto:wheretohygge@gmail.com" class="ci-val">wheretohygge@gmail.com</a>
+      </div>
+      <div class="ci">
+        <div class="ci-label">Instagram</div>
+        <a href="https://instagram.com/loic.lehygge" target="_blank" class="ci-val">@loic.lehygge</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fl">Loïc Lehygge</span>
+  <span class="fc">Media Kit 2026 · Every story deserves to be told. Let's tell yours.</span>
+</footer>
+
+</body>
+</html>
