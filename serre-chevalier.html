@@ -87,6 +87,13 @@
   footer { padding: 3rem 5%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(247,243,238,0.06); }
   footer p { font-size: 0.6rem; letter-spacing: 0.15em; opacity: 0.3; text-transform: uppercase; }
 
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 200; }
+  .hamburger span { width: 24px; height: 2px; background: var(--cream); display: block; transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; inset: 0; background: var(--dark); z-index: 150; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.7; }
+  .mobile-menu a:hover { opacity: 1; }
+  .mobile-menu .mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--cream); font-size: 1.5rem; cursor: pointer; opacity: 0.6; }
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
@@ -116,7 +123,21 @@
     </li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
+<button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="index.html">Home</a>
+  <a href="serre-chevalier.html">Serre Chevalier</a>
+  <a href="outdoor-gear.html">Outdoor &amp; Gear</a>
+  <a href="ugc-collabs.html">UGC &amp; Collabs</a>
+  <a href="hospitality.html">Hospitality</a>
+  <a href="on-the-road.html">On the Road</a>
+  <a href="drone.html">Drone</a>
+  <a href="index.html#contact">Contact</a>
+</div>
 
 <section class="hero">
   <img src="images/serre_che_aerial.jpg" alt="Serre Chevalier vue aérienne">
