@@ -183,18 +183,13 @@ footer{background:var(--dark);padding:32px 64px;display:flex;justify-content:spa
 </nav>
 <div id="mobile-nav">
   <button id="mobile-close" onclick="document.getElementById('mobile-nav').classList.remove('active')">×</button>
-  <a href="index.html">Home</a>
-  <a href="#about">About</a>
-  <a href="#reach">Reach</a>
-  <a href="#audience">Audience</a>
-  <a href="#services">Services</a>
   <a href="serre-chevalier.html">Serre Chevalier</a>
   <a href="outdoor-gear.html">Outdoor & Gear</a>
   <a href="ugc-collabs.html">UGC & Collabs</a>
   <a href="hospitality.html">Hospitality</a>
   <a href="on-the-road.html">On the Road</a>
   <a href="drone.html">Drone</a>
-  <a href="#contact">Contact</a>
+  <a href="#contact" onclick="document.getElementById('mobile-nav').classList.remove('active')">Contact</a>
 </div>
 <script>
   document.getElementById('hamburger').addEventListener('click', function() {
