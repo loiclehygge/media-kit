@@ -95,6 +95,12 @@
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
+    .row { flex-wrap: wrap; }
+    .g-item { flex: 1 1 45% !important; }
+    .gallery > div[style] { flex-wrap: wrap !important; }
+    .gallery > div[style] > div { flex: 1 1 100% !important; min-width: 0; }
+    .gallery > div[style] > div[style*="aspect-ratio"] { aspect-ratio: 16/9 !important; }
+
     .hero-content { right: 5%; left: 5%; text-align: left; }
     .row { flex-wrap: wrap; }
     .g-item { flex: 1 1 45% !important; }
