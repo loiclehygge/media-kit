@@ -87,17 +87,23 @@
   footer { padding: 3rem 5%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(247,243,238,0.06); }
   footer p { font-size: 0.6rem; letter-spacing: 0.15em; opacity: 0.3; text-transform: uppercase; }
 
+  /* Stats block */
+  .stats-block { display: flex; gap: 0; align-items: stretch; }
+  .stats-left { flex: 2; display: flex; flex-direction: column; justify-content: center; padding: 4rem 5%; }
+  .stats-img { flex: 0.7; overflow: hidden; }
+
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
-    .row { flex-wrap: wrap; }
-    .g-item, .v-item { flex: 1 1 100% !important; }
     .stats { flex-wrap: wrap; gap: 2rem; }
-
-    .stats { gap: 2rem; flex-wrap: wrap; }
     .row { flex-wrap: wrap; }
-    .g-item, .v-item { flex: 1 1 100% !important; }
+    .g-item, .v-item { flex: 1 1 45% !important; aspect-ratio: 3/2 !important; }
+    .g-item.portrait, .v-item.portrait { aspect-ratio: 3/2 !important; }
+    .v-item.landscape { aspect-ratio: 16/9 !important; flex: 1 1 100% !important; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .stats-block { flex-direction: column; }
+    .stats-img { flex: none; width: 100%; aspect-ratio: 16/9; }
+    .stats-left { padding: 2rem 5%; }
   }
   /* MOBILE NAV */
   #hamburger { display: none; cursor: pointer; background: none; border: none; padding: 6px; z-index: 300; }
@@ -155,8 +161,8 @@
   </div>
 </section>
 
-<div style="display:flex; gap:0; align-items:stretch;">
-  <div style="flex:2; display:flex; flex-direction:column; justify-content:center; padding:4rem 5%;">
+<div class="stats-block">
+  <div class="stats-left">
     <div class="stats" style="justify-content:flex-start; gap:4rem; padding:0; border:none; margin-bottom:3rem;">
       <div class="stat-item">
         <span class="stat-number">3M+</span>
@@ -176,8 +182,8 @@
       <span class="quote-source">— Serre Chevalier Tourism</span>
     </div>
   </div>
-  <div style="flex:0.7; overflow:hidden;">
-    <img src="images/stats_collab_1.jpg" alt="Stats Serre Chevalier" style="width:100%; height:100%; object-fit:cover; display:block;">
+  <div class="stats-img" onclick="openLightbox(2)">
+    <img src="images/stats_collab_1.jpg" alt="Stats Serre Chevalier" style="width:100%; height:100%; object-fit:cover; display:block; cursor:pointer;">
   </div>
 </div>
 
@@ -229,7 +235,7 @@
 </footer>
 
 <script>
-  const images = ['images/serre_che_genepy.jpg', 'images/serre_che_telesiege.jpg'];
+  const images = ['images/serre_che_genepy.jpg', 'images/serre_che_telesiege.jpg', 'images/stats_collab_1.jpg'];
   let current = 0;
   function openLightbox(i) { current = i; document.getElementById('lightboxImg').src = images[i]; document.getElementById('lightbox').classList.add('active'); document.body.style.overflow = 'hidden'; }
   function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
