@@ -73,8 +73,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(247,243,238,0.97);backdrop
 .total-n{font-size:clamp(32px,4vw,50px);font-weight:300;color:#fff;line-height:1;text-align:center;}
 .total-l{font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px;text-align:center;}
 
-/* AUDIENCE */
-.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;}
+/* AUDIENCE (Optimized layout) */
+.aud-header-grid{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;margin-bottom:48px;}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
 .aud-sub{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;margin-top:32px;}
 .aud-sub:first-child{margin-top:0;}
 .bar-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
@@ -86,13 +87,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(247,243,238,0.97);backdrop
 .gender-f{background:var(--accent);}
 .gender-m{background:var(--sand-l);}
 .gender-lbl{display:flex;justify-content:space-between;margin-top:8px;font-family:Arial,sans-serif;font-size:11px;color:var(--mid);}
-.callout{background:var(--warm);padding:32px;border-left:3px solid var(--accent);margin-bottom:24px;}
-.callout-n{font-size:clamp(32px,4vw,46px);font-weight:300;color:var(--dark);line-height:1;}
-.callout-l{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-top:6px;}
+.callout{background:var(--warm);padding:24px 32px;border-left:3px solid var(--accent);min-width:280px;}
+.callout-n{font-size:clamp(28px,3.5vw,40px);font-weight:300;color:var(--dark);line-height:1;}
+.callout-l{font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-top:4px;}
 
-/* COUNTRY PILLS (Clean, no bars/percentages) */
-.country-pill-list{display:flex;flex-direction:column;gap:10px;}
-.country-pill{background:var(--warm);padding:13px 18px;font-family:Arial,sans-serif;font-size:13px;font-weight:500;color:var(--dark-s);border-radius:4px;border:1px solid var(--sand-l);display:flex;align-items:center;justify-content:space-between;}
+/* COUNTRY PILLS */
+.country-pill-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.country-pill{background:var(--warm);padding:12px 16px;font-family:Arial,sans-serif;font-size:12px;font-weight:500;color:var(--dark-s);border-radius:4px;border:1px solid var(--sand-l);display:flex;align-items:center;justify-content:space-between;}
 
 /* SERVICES */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
@@ -147,7 +148,9 @@ footer{background:var(--dark);padding:32px 64px;display:flex;justify-content:spa
   .hero-content{padding:0 24px 48px;}
   .about-grid{grid-template-columns:1fr;}
   .plat-grid{grid-template-columns:1fr 1fr;}
+  .aud-header-grid{grid-template-columns:1fr;gap:24px;}
   .aud-grid{grid-template-columns:1fr;}
+  .country-pill-list{grid-template-columns:1fr;}
   .svc-grid{grid-template-columns:1fr;}
   .testis{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;}
@@ -287,28 +290,34 @@ footer{background:var(--dark);padding:32px 64px;display:flex;justify-content:spa
 
 <!-- AUDIENCE -->
 <div class="section" id="audience">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+  <div class="aud-header-grid">
     <div>
       <p class="label">The Audience</p>
       <h2 class="title">Who's<br>listening.</h2>
     </div>
     <div>
-      <div class="callout"><div class="callout-n">2.5M+</div><div class="callout-l">Accounts reached / month (Instagram)</div></div>
+      <div class="callout">
+        <div class="callout-n">2.5M+</div>
+        <div class="callout-l">Accounts reached / month (Instagram)</div>
+      </div>
     </div>
   </div>
-  <div class="aud-grid" style="grid-template-columns:1fr 1fr;margin-top:48px;">
+
+  <div class="aud-grid">
     <div>
       <div class="aud-sub">Age range — Instagram</div>
       <div class="bar-row"><span class="bar-lbl">18–24</span><div class="bar-wrap"><div class="bar" style="width:26%"></div></div><span class="bar-val">26%</span></div>
       <div class="bar-row"><span class="bar-lbl">25–34</span><div class="bar-wrap"><div class="bar" style="width:47%"></div></div><span class="bar-val">47%</span></div>
       <div class="bar-row"><span class="bar-lbl">35–44</span><div class="bar-wrap"><div class="bar" style="width:19%"></div></div><span class="bar-val">19%</span></div>
       <div class="bar-row"><span class="bar-lbl">45–54</span><div class="bar-wrap"><div class="bar" style="width:7%"></div></div><span class="bar-val">7%</span></div>
+      
       <div class="aud-sub">Gender split</div>
       <div class="gender-bar"><div class="gender-f" style="flex:40"></div><div class="gender-m" style="flex:60"></div></div>
       <div class="gender-lbl"><span>40% Female</span><span>60% Male</span></div>
     </div>
+
     <div>
-      <div class="aud-sub">Top pays</div>
+      <div class="aud-sub" style="margin-top:0;">Top pays</div>
       <div class="country-pill-list">
         <div class="country-pill"><span>France</span> 🇫🇷</div>
         <div class="country-pill"><span>Belgium</span> 🇧🇪</div>
