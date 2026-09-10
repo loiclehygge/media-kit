@@ -74,7 +74,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(247,243,238,0.97);backdrop
 .total-l{font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px;text-align:center;}
 
 /* AUDIENCE */
-.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:48px;}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:24px;}
 .aud-sub{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;margin-top:32px;}
 .aud-sub:first-child{margin-top:0;}
 .bar-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
@@ -87,8 +87,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(247,243,238,0.97);backdrop
 .gender-m{background:var(--sand-l);}
 .gender-lbl{display:flex;justify-content:space-between;margin-top:8px;font-family:Arial,sans-serif;font-size:11px;color:var(--mid);}
 .callout{background:var(--warm);padding:24px 32px;border-left:3px solid var(--accent);margin-bottom:0;}
-.callout-n{font-size:clamp(28px,3.5vw,40px);font-weight:300;color:var(--dark);line-height:1;}
-.callout-l{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-top:4px;}
+.callout-n{font-size:clamp(28px,3.5vw,40px);font-weight:300;color:#fff;line-height:1;}
+.callout-l{font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-l);margin-top:4px;}
 
 /* COUNTRY PILLS */
 .country-pill-list{display:flex;flex-direction:column;gap:10px;}
@@ -287,20 +287,18 @@ footer{background:var(--dark);padding:32px 64px;display:flex;justify-content:spa
 
 <!-- AUDIENCE -->
 <div class="section" id="audience">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+  <div class="aud-grid" style="align-items: center;">
     <div>
       <p class="label">The Audience</p>
       <h2 class="title">Who's<br>listening.</h2>
     </div>
-    <div>
-      <div class="callout">
-        <div class="callout-n">2.5M+</div>
-        <div class="callout-l">Accounts reached / month (Instagram)</div>
-      </div>
+    <div style="background: var(--dark); padding: 32px; border-radius: 4px;">
+      <div class="callout-n">2.5M+</div>
+      <div class="callout-l">Accounts reached / month (Instagram)</div>
     </div>
   </div>
 
-  <div class="aud-grid">
+  <div class="aud-grid" style="margin-top: 48px;">
     <div>
       <div class="aud-sub">Age range — Instagram</div>
       <div class="bar-row"><span class="bar-lbl">18–24</span><div class="bar-wrap"><div class="bar" style="width:26%"></div></div><span class="bar-val">26%</span></div>
